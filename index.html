@@ -13,21 +13,21 @@
 		<h1 id="site_name"> The Cookie Store </h1>
 		<div class="jar">
 			<img src="images/lemon.svg" id="lemon">
-			<p id="lemon_number">0</p>
+			<p class="number" id="lemon_number">0</p>
 			<br>
-			<p >LEMON</p>
+			<p>LEMON</p>
 		</div>
 		<div class="jar">
 			<img src="images/sugar.svg" id="sugar">
-			<p id="sugar_number">0</p>
+			<p class="number" id="sugar_number">0</p>
 			<br>
 			<p >SUGAR</p>
 		</div>
 		<div class="jar">
 			<img src="images/chocolate.svg" id="chocolate">
-			<p id="chocolate_number">0</p>
+			<p  class="number" id="chocolate_number">0</p>
 			<br>
-			<p >CHOCOLATE</p>
+			<p>CHOCOLATE</p>
 		</div>
 	
 		<div id="total">
@@ -56,7 +56,7 @@
 										  parseInt(SugarCookiesCount) + 
 										  parseInt(ChocolateCookiesCount)).toString();
 				
-				document.getElementById("Total_Count").innerHTML = TotalCookies_value
+				document.getElementById("Total_Count").innerHTML = TotalCookies_value;
 			};   
 
 	// Lemon flavor 
@@ -102,8 +102,6 @@
 			    	$("#chocolate_number").html("0");
 		   		});
 	});
-
-
 
 
 	</script>

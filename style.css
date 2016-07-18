@@ -8,11 +8,9 @@
     src: url("JennaSue.ttf");
 }
 
-
 #reset, #total, h1, p, img {
 	text-align: center;
 }
-
 
 img{
 	width: 50%;
@@ -20,12 +18,16 @@ img{
 	padding-top: 20px
 }
 
-
 .jar{
 	width: 33%;
-	height: 220px;
+	height: 280px;
 	float: left; 
 	border: 1px solid #ccc; 
+}
+
+
+.number{
+	font-size: 32px;
 }
 
 
@@ -38,16 +40,13 @@ img{
 	padding: 10px 0 0 10px ;
 	font-size: 20px;
 	border-top: none;
-	
 }
-
 
 p{
-	font-family: Helvetica;
+	font-family: 'Jenna Sue';
 	text-transform: uppercase;
-	font-size: 12px;
+	font-size: 25px;
 }
-
 
 form{
 	width: 50%;
@@ -66,7 +65,6 @@ hr{
 	width: 60%;
 	margin:0% 0% 5% 22%;
 }
-
 
 #reset{
 	width: 100%;
