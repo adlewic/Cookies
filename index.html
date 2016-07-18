@@ -25,13 +25,9 @@
 		</div>
 		<div class="jar">
 			<img src="images/chocolate.svg" id="chocolate">
-			<p  class="number" id="chocolate_number">0</p>
+			<p class="number" id="chocolate_number">0</p>
 			<br>
 			<p>CHOCOLATE</p>
-		</div>
-	
-		<div id="total">
-			<span id="Total_Count">0</span>
 		</div>
 		<input type="submit" value="Reset cookies" id="reset">
 	</form>
@@ -45,20 +41,9 @@
 		var ChocolateCookiesCount = Cookies.get("chocolate");
 
 
-	// we are going to make our functions in here
+	// Recolecting the clicks on each cookie
 		$(document).ready(function(){
 		
-
-	// this function adds all the counts and shows the total count of all the cookies 
-		function Total(){
-				// a variable who stores the total amount of cookies , all flavors
-		    	var TotalCookies_value = (parseInt(LemonCookiesCount) +
-										  parseInt(SugarCookiesCount) + 
-										  parseInt(ChocolateCookiesCount)).toString();
-				
-				document.getElementById("Total_Count").innerHTML = TotalCookies_value;
-			};   
-
 	// Lemon flavor 
 			$("#lemon").on("click",function(){
 				LemonCookiesCount++;
@@ -102,6 +87,7 @@
 			    	$("#chocolate_number").html("0");
 		   		});
 	});
+
 
 
 	</script>
