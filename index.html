@@ -31,7 +31,7 @@
 		</div>
 	
 		<div id="total">
-			<h2 id="Total_Count">0</h2>
+			<span id="Total_Count">0</span>
 		</div>
 		<input type="submit" value="Reset cookies" id="reset">
 	</form>
@@ -46,10 +46,10 @@
 
 
 	// we are going to make our functions in here
-
 		$(document).ready(function(){
 		
 
+	// this function adds all the counts and shows the total count of all the cookies 
 		function Total(){
 				// a variable who stores the total amount of cookies , all flavors
 		    	var TotalCookies_value = (parseInt(LemonCookiesCount) +
@@ -59,8 +59,6 @@
 				document.getElementById("Total_Count").innerHTML = TotalCookies_value
 			};   
 
-
-
 	// Lemon flavor 
 			$("#lemon").on("click",function(){
 				LemonCookiesCount++;
@@ -69,7 +67,6 @@
 				document.getElementById("lemon_number").innerHTML = LemonCookiesCount
 			});
 		
-
 
 	// Sugar flavor 
 			$("#sugar").on("click",function(){
@@ -81,7 +78,6 @@
 
 
 	// Chocolate flavor 
-
 			$("#chocolate").on("click",function(){
 				ChocolateCookiesCount++
 				Cookies.set("chocolate",SugarCookiesCount)
