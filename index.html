@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 		<script src="cookies.js"></script>
+		<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>Cookie Store</title>
 </head>
@@ -13,63 +14,83 @@
 		<div class="jar">
 			<img src="images/lemon.svg" id="lemon">
 			<p id="lemon_number">0</p>
+			<br>
+			<p >LEMON</p>
 		</div>
 		<div class="jar">
 			<img src="images/sugar.svg" id="sugar">
 			<p id="sugar_number">0</p>
+			<br>
+			<p >SUGAR</p>
 		</div>
 		<div class="jar">
 			<img src="images/chocolate.svg" id="chocolate">
 			<p id="chocolate_number">0</p>
+			<br>
+			<p >CHOCOLATE</p>
 		</div>
-		
+	
+		<div id="total">
+			<h2 id="Total_Count">0</h2>
+		</div>
 		<input type="submit" value="Reset cookies" id="reset">
 	</form>
 
+
 	<script>
 
-		// create cookies count variables
+	// create cookies count variables
 		var LemonCookiesCount = Cookies.get("lemon");
 		var SugarCookiesCount = Cookies.get("sugar");
 		var ChocolateCookiesCount = Cookies.get("chocolate");
 
 
-		// set the initial count of every cookie 
-		if (LemonCookiesCount == null && SugarCookiesCount == null && ChocolateCookiesCount == null){
-			Cookies.set("lemon","0");
-			Cookies.set("sugar","0");
-			Cookies.set("chocolate","0");
-		};
+	// we are going to make our functions in here
 
-
-
-		// this is to count the clicks or the "cookies" of each flavor 
-	
 		$(document).ready(function(){
+		
 
+		function Total(){
+				// a variable who stores the total amount of cookies , all flavors
+		    	var TotalCookies_value = (parseInt(LemonCookiesCount) +
+										  parseInt(SugarCookiesCount) + 
+										  parseInt(ChocolateCookiesCount)).toString();
+				
+				document.getElementById("Total_Count").innerHTML = TotalCookies_value
+			};   
+
+
+
+	// Lemon flavor 
 			$("#lemon").on("click",function(){
 				LemonCookiesCount++;
 				Cookies.set("lemon",LemonCookiesCount);
-				// ("#lemon_number").html("lemon",LemonCookiesCount);
-				 document.getElementById("lemon_number").innerHTML = LemonCookiesCount
+
+				document.getElementById("lemon_number").innerHTML = LemonCookiesCount
 			});
 		
+
+
+	// Sugar flavor 
 			$("#sugar").on("click",function(){
 				SugarCookiesCount++;
 				Cookies.set("sugar",SugarCookiesCount);
 			
-				// ("#sugar_number").html("sugar", SugarCookiesCount);
+				document.getElementById("sugar_number").innerHTML = SugarCookiesCount
 			});
+
+
+	// Chocolate flavor 
 
 			$("#chocolate").on("click",function(){
 				ChocolateCookiesCount++
 				Cookies.set("chocolate",SugarCookiesCount)
-				// ("#chocolate_number").html("chocolate", ChocolateCookiesCount);
 				
+				document.getElementById("chocolate_number").innerHTML = ChocolateCookiesCount
 			});
 
 
-			// to reset the values of all the cookies
+	// to reset the values of all the cookies
 			   $("#reset").on("click",function(){
 
 				  	LemonCookiesCount = 0; 	
@@ -85,6 +106,10 @@
 			    	$("#chocolate_number").html("0");
 		   		});
 	});
+
+
+
+
 	</script>
 </body>
 </html>
