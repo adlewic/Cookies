@@ -40,6 +40,14 @@
 		var SugarCookiesCount = Cookies.get("sugar");
 		var ChocolateCookiesCount = Cookies.get("chocolate");
 
+	//setting the first user cookies 
+		if (Cookies.get("lemon") == null && Cookies.get("sugar") == null && Cookies.get("chocolate") == null){
+
+			Cookies.set("lemon",0)
+			Cookies.set("sugar",0)
+			Cookies.set("chocolate",0)
+		}
+
 
 	// Recolecting the clicks on each cookie
 		$(document).ready(function(){
@@ -78,13 +86,13 @@
 			    	SugarCookiesCount = 0;
 			    	ChocolateCookiesCount = 0;
 			    	
-			    	Cookies.set("lemon", "0");
-			    	Cookies.set("sugar", "0");
-			    	Cookies.set("chocolate", "0");
+			    	Cookies.set("lemon", 0);
+			    	Cookies.set("sugar", 0);
+			    	Cookies.set("chocolate", 0);
 
-			    	$("#lemon_number").html("0");
-			    	$("#sugar_number").html("0");
-			    	$("#chocolate_number").html("0");
+			    	$("#lemon_number").html(0);
+			    	$("#sugar_number").html(0);
+			    	$("#chocolate_number").html(0);
 		   		});
 	});
 
