@@ -35,12 +35,15 @@
 
 	<script>
 
-	// create cookies count variables
-		var LemonCookiesCount = Cookies.get("lemon");
-		var SugarCookiesCount = Cookies.get("sugar");
-		var ChocolateCookiesCount = Cookies.get("chocolate");
 
-	//setting the first user cookies 
+
+//setting the variables for the cookies 
+		var LemonCookiesCount =  Cookies.get("lemon")
+		var SugarCookiesCount =  Cookies.get("sugar")
+		var ChocolateCookiesCount = Cookies.get("chocolate")
+
+
+//setting all values of cookies to zero  for the first time user 
 		if (Cookies.get("lemon") == null && Cookies.get("sugar") == null && Cookies.get("chocolate") == null){
 
 			Cookies.set("lemon",0)
@@ -48,11 +51,10 @@
 			Cookies.set("chocolate",0)
 		}
 
-
-	// Recolecting the clicks on each cookie
+// Recolecting the clicks on each cookie
 		$(document).ready(function(){
 		
-	// Lemon flavor 
+// Lemon flavor 
 			$("#lemon").on("click",function(){
 				LemonCookiesCount++;
 				Cookies.set("lemon",LemonCookiesCount);
@@ -60,8 +62,7 @@
 				document.getElementById("lemon_number").innerHTML = LemonCookiesCount
 			});
 		
-
-	// Sugar flavor 
+// Sugar flavor 
 			$("#sugar").on("click",function(){
 				SugarCookiesCount++;
 				Cookies.set("sugar",SugarCookiesCount);
@@ -70,7 +71,7 @@
 			});
 
 
-	// Chocolate flavor 
+// Chocolate flavor 
 			$("#chocolate").on("click",function(){
 				ChocolateCookiesCount++
 				Cookies.set("chocolate",SugarCookiesCount)
@@ -79,7 +80,7 @@
 			});
 
 
-	// to reset the values of all the cookies
+// to reset the values of all the cookies
 			   $("#reset").on("click",function(){
 
 				  	LemonCookiesCount = 0; 	
@@ -95,6 +96,12 @@
 			    	$("#chocolate_number").html(0);
 		   		});
 	});
+
+
+// refreshing but still keeping the value of the cookies 
+	document.getElementById("lemon_number").innerHTML = LemonCookiesCount
+	document.getElementById("sugar_number").innerHTML = SugarCookiesCount
+	document.getElementById("chocolate_number").innerHTML = ChocolateCookiesCount
 
 
 
